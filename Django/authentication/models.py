@@ -14,6 +14,15 @@ class new_startup():
     team_size = models.IntegerField()
     company_code = models.IntegerField() #this will be used as team-code
 
+class member():
+    fname = models.CharField(max_length=50)
+    lname = models.CharField(max_length=50)
+    dob = models.DateTimeField()
+    job_title = models.CharField(max_length=50) #position in the company
+    joining_date = models.CharField(max_length=50)
+    joining_code = models.IntegerField()
+
+
 
 
 
