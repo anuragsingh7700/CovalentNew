@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 
-class new_startup():
+class new_startup(models.Model):
     #details of the registrar
     founder_name = models.CharField(max_length=50)
     founder_pan_id = models.CharField(max_length=20)
@@ -14,7 +14,7 @@ class new_startup():
     team_size = models.IntegerField()
     company_code = models.IntegerField() #this will be used as team-code
 
-class member():
+class member(models.Model):
     fname = models.CharField(max_length=50)
     lname = models.CharField(max_length=50)
     dob = models.DateTimeField()
