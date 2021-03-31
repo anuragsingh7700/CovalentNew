@@ -21,7 +21,7 @@ class new_startup(models.Model):
     company_code = models.PositiveIntegerField(validators=[MinValueValidator(10000)], primary_key=True) #this will be used as team-code
 
 class member(models.Model):
-    #profile_picture = models.ImageField(upload_to="author_pic/", null=True, blank=True)
+    profile_picture = models.ImageField(upload_to="employee_pic/", null=True, blank=True)
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
     dob = models.DateField()
