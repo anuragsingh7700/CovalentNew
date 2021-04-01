@@ -5,7 +5,7 @@ from . import views
 from .views import ProjectAPI
 
 router = DefaultRouter()
-router.register('project_dashboard', ProjectAPI,basename='project')
+router.register('project_dashboard', ProjectAPI, basename='project')
 urlpatterns = [
     path('projects/', include(router.urls))
 ]
