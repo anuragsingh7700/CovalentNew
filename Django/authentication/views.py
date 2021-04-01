@@ -1,19 +1,17 @@
-from django.shortcuts import render
-from django.http import HttpResponse
-from rest_framework import status
-from rest_framework.decorators import api_view
-from rest_framework.response import Response
-from rest_framework.utils import json
-from rest_framework import serializers
 from rest_framework import viewsets
+from .serializers import StartupSerializer
+from .models import Startup
 
-
+class StartupAPI(viewsets.ModelViewSet):
+    serializer_class = StartupSerializer
+    queryset = Startup.objects.all()
+    # permission_classes = [IsAccountAdminOrReadOnly]
 # Create your views here.
-def index(request):
-    return HttpResponse("Hello! I am a startup or I am a member page")
+# def index(request):
+#     return HttpResponse("Hello! I am a startup or I am a member page")
 
-def register(request):
-    return HttpResponse("Register page")
+# def register(request):
+#     return HttpResponse("Register page")
 
-def login(request):
-    return HttpResponse("Login page")
+# def login(request):
+#     return HttpResponse("Login page")

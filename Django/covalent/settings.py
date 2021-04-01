@@ -37,9 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'authentication.apps.AuthenticationConfig',
+    'authentication',
     'rest_framework',
-    'newsfeed',
     'job',
 ]
 
