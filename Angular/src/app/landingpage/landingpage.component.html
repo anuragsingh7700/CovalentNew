@@ -1,1 +1,129 @@
-<p>landingpage works!</p>
+<nav class="navbar navbar-expand-lg navbar-light sticky">
+    <div class="container-fluid">
+      <a class="navbar-brand align-middle" href="#">
+        BookYourSlot
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div class='container-fluid'>
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0  col-auto ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" routerLink='/home' routerLinkActive='active'>Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink='/explore' routerLinkActive='active'>Explore</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink='/about' routerLinkActive='active'>About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink='/ext-dashboard' routerLinkActive='active'>DASH</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink='/contact' routerLinkActive='active'>Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink='/login' routerLinkActive='active'>Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink='/register' routerLinkActive='active'>SignUp</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- <div class="container">
+  <h1 class="form-heading">login Form</h1>
+  <div class="login-form">
+    <div class="main-div">
+      <div class="panel">
+        <h2>Admin Login</h2>
+        <p>Please enter your email and password</p>
+      </div>
+      <form id="Login">
+        <div class="form-group">
+          <input type="email" class="form-control" id="inputEmail" placeholder="Email Address">
+        </div>
+        <div class="form-group">
+          <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+        </div>
+        <div class="forgot">
+          <a href="reset.html">Forgot password?</a>
+        </div>
+        <button type="submit" class="btn btn-primary">Login</button>
+      </form>
+    </div>
+    <p class="botto-text"> Designed by Sunil Rajput</p>
+     -->
+
+     <script>
+        var slider = document.getElementById("myRange");
+        var output = document.getElementById("demo");
+        output.innerHTML = slider.value;
+        
+        slider.oninput = function() {
+          output.innerHTML = this.value;
+        }
+        </script>
+  
+  
+      <div id="main">
+    <div class="text-center pr-3 py-1">
+      <div class="container">
+        <div class="row m-4">
+          <div class="bg-white border-right border-top rounded my-0 mx-auto ml-auto mr-auto col-12 p-3 pl-2 col-md-7" id="box">
+              <div class="card">
+                  <div class="card-header">
+              <h2 class="text-light" id="header">Enter your details.. </h2>
+              </div>
+              <div class="card-body">
+              <form action="#" autocomplete="off" method="post">
+                  <br/>
+                <div class="form-group">
+                  <h5 class="text-info" id="labels"> <i class="fa fa-envelope" style="font-size:16px; color:cyan"></i>&nbsp; Select Date</h5>
+                  <input type="date" class="form-control form-control-xl" placeholder="eg: john@xyz.com." id="login-id" required="">
+                </div>
+              <br/>
+                <div class="form-group">
+                  <h5 class="text-info" id="labels"><i class="fa fa-watch" style="font-size:18px;color:cyan"></i> <label for="password">&nbsp;Select Starting Time:</label> 
+                      <input type="time" class="form-control form-control-xl" placeholder="eg:****" id="password" required=""> </h5>
+                </div>
+                <br/>
+                <div class="form-group">
+                  <h5 class="text-info" id="labels"><i class="fa fa-watch" style="font-size:18px;color:cyan"></i> <label for="password">&nbsp; Select End Time:</label> 
+                    <input type="time" class="form-control form-control-xl" placeholder="eg:****" id="password" required=""> </h5>
+                  
+                </div>
+              <br/>
+                <div class="form-group">
+                  <h5 class="text-info" id="labels"> <i class="fa fa-watch" style="font-size:16px; color:cyan"></i>&nbsp; Preparation Time before event:</h5>
+                  <select name="Duration" id="dur"  class="form-control form-control-xl" placeholder=""  required="">
+                    <option value="1">Not Needed.</option>
+                    <option value="2">30 Minutes</option>
+                    <option value="3">1 Hour</option>
+                    <option value="4">2 Hours</option>
+                    <option value="5">4 Hours</option>
+                    <option value="6">5 Hours</option>
+                    <option value="7">7 Hours</option>
+                  </select>
+                </div>
+                <br/>
+                <div class="form-group text-center">
+                  <button type="submit" class="btn-lg btn-outline-success rounded shadow" id="submit" style="	box-shadow: 0px 10px 10px  black;">Submit</button>
+                </div>
+                <br/>
+              </form>
+          </div>
+          </div>
+          </div>
+        </div>
+      </div>
+  </div>
+    </div>
+   
+  
+   
