@@ -18,7 +18,7 @@ class Startup(models.Model):
     date_of_creation = models.DateField(default=timezone.now)
     industry = models.CharField(max_length=50)
     sector = models.CharField(max_length=50)
-    # team_size = models.IntegerField()
+    team_size = models.IntegerField()
     company_code = models.CharField(default = ''.join((choice(string.ascii_uppercase) for x in range(7))), unique=True,max_length=7) #this will be used as team-code
 
 
