@@ -1,6 +1,6 @@
 from django.db import models
 
-class Tags(models.Model):
+class Tag(models.Model):
     title = models.CharField(max_length=40, verbose_name='Add Tags')
 
     def __str__(self):
@@ -16,7 +16,7 @@ PROJECT_STATUS_CHOICES = (
 class job_post(models.Model):
     project_name = models.CharField(max_length=250)
     project_description = models.TextField(null=True, blank=True)
-    tags = models.ManyToManyField(Tags)
+    tags = models.ManyToManyField(Tag)
     duration = models.CharField(max_length=20)
     timestamp = models.DateTimeField(auto_now_add=True)
 ##latest_job_post = job_post.objects.filter(
