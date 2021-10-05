@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class Tag(models.Model):
     title = models.CharField(max_length=40, verbose_name='Add Tags')
 
@@ -12,6 +13,7 @@ PROJECT_STATUS_CHOICES = (
     ('closed', 'Closed'),
 )
 
+
 # Create your models here.
 class job_post(models.Model):
     project_name = models.CharField(max_length=250)
@@ -19,6 +21,6 @@ class job_post(models.Model):
     tags = models.ManyToManyField(Tag)
     duration = models.CharField(max_length=20)
     timestamp = models.DateTimeField(auto_now_add=True)
-##latest_job_post = job_post.objects.filter(
-##        status='').order_by('-timestamp')[0:3]
+    ##latest_job_post = job_post.objects.filter(
+    ##        status='').order_by('-timestamp')[0:3]
     status = models.CharField(max_length=35, choices=PROJECT_STATUS_CHOICES, default='open')
