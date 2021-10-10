@@ -1,6 +1,6 @@
 from django.db.models import fields
 from rest_framework import serializers
-from .models import job_post
+from .models import Project
 
 # class TagSerializer(serializers.ModelSerializer):
 #     class Meta:
@@ -9,5 +9,5 @@ from .models import job_post
 
 class JobSerializer(serializers.ModelSerializer):
     class Meta:
-        model = job_post
+        model = Project
         fields = ['project_name', 'project_description', 'tags', 'duration', 'timestamp', 'status']

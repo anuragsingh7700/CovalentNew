@@ -1,4 +1,7 @@
 from django.db import models
+from django.db.models.deletion import CASCADE
+
+from authentication.models import Startup
 
 
 class Tag(models.Model):
@@ -15,12 +18,20 @@ PROJECT_STATUS_CHOICES = (
 
 
 # Create your models here.
-class job_post(models.Model):
+class Project(models.Model):
+    startup = models.ForeignKey(Startup,on_delete=CASCADE)
     project_name = models.CharField(max_length=250)
     project_description = models.TextField(null=True, blank=True)
     tags = models.ManyToManyField(Tag)
-    duration = models.CharField(max_length=20)
+    deadline = models.CharField(max_length=20)
     timestamp = models.DateTimeField(auto_now_add=True)
     ##latest_job_post = job_post.objects.filter(
     ##        status='').order_by('-timestamp')[0:3]
     status = models.CharField(max_length=35, choices=PROJECT_STATUS_CHOICES, default='open')
+    cost = models.CharField(max_length=128)
+    q1 = models.CharField(max_length=512,default='',verbose_name='Question 1',blank=True)
+    q2 = models.CharField(max_length=512,default='',verbose_name='Question 1',blank=True)
+    q3 = models.CharField(max_length=512,default='',verbose_name='Question 1',blank=True)
+
+    def __str__(self):
+        return self.project_name
