@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Project, Tag
+from .models import Project, Star, Tag
 from django.contrib.auth.models import Group
 
 # Register your models here.
@@ -14,3 +14,4 @@ class JobsAdmin(admin.ModelAdmin):
 
 admin.site.register(Project, JobsAdmin)
 admin.site.unregister(Group)
+admin.site.register(Star)

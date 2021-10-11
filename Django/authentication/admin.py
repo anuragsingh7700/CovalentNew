@@ -7,10 +7,10 @@ from django.contrib.auth.models import User
 from .models import AdminUser, Rating, SiteUser, Startup, PaymentMethod, Rating
 from .models import Member
 
-# class MemberAdmin(admin.ModelAdmin):
-#     list_display = ('first_name', 'job_title', 'joining_code')
+class MemberAdmin(admin.ModelAdmin):
+    list_display = ('user_id','first_name','job_title', 'startup')
 
-# admin.site.register(Member, MemberAdmin)
+admin.site.register(Member, MemberAdmin)
 
 # class StartUpAdmin(UserAdmin):
 #     list_display = ('company_name', 'date_of_creation', 'team_size')
@@ -36,6 +36,6 @@ from .models import Member
 admin.site.register(SiteUser)
 admin.site.register(Startup)
 admin.site.register(AdminUser)
-admin.site.register(Member)
+# admin.site.register(Member)
 admin.site.register(PaymentMethod)
 admin.site.register(Rating)

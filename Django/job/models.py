@@ -1,7 +1,7 @@
 from django.db import models
 from django.db.models.deletion import CASCADE
 
-from authentication.models import Startup
+from authentication.models import Startup,Member
 
 
 class Tag(models.Model):
@@ -35,3 +35,8 @@ class Project(models.Model):
 
     def __str__(self):
         return self.project_name
+
+class Star(models.Model):
+    startup =  models.ForeignKey(Startup, on_delete=CASCADE)
+    added_by = models.ForeignKey(Member, on_delete=CASCADE)
+    project = models.ForeignKey(Project, on_delete=CASCADE)

@@ -2,8 +2,6 @@ from django.db import models
 from django.db.models.deletion import CASCADE, RESTRICT
 from django.db.models.fields.related import OneToOneField
 from django.utils import timezone
-from random import choice
-import string
 from django.contrib.auth.models import AbstractUser
 from .managers import SiteUserManager
 import uuid
@@ -88,7 +86,7 @@ def create_user_profile(sender, instance, created, **kwargs):
         # instance.company_code = ''.join((choice(string.ascii_uppercase) for x in range(7)))
         Startup.objects.get_or_create(user = instance)
     elif instance.role == ADMIN:
-        print(instance)
+        # print(instance)
         instance.is_superuser = True
         instance.is_staff = True
         AdminUser.objects.get_or_create(user = instance)
@@ -124,3 +122,4 @@ class Rating(models.Model):
 
     def __str__(self):
         return self.startup.company_name
+
