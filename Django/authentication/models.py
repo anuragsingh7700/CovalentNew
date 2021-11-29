@@ -23,7 +23,7 @@ class SiteUser(AbstractUser):
     
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['role']
-    objects= SiteUserManager()
+    objects = SiteUserManager()
 
     def __str__(self):
         return self.email
@@ -54,8 +54,9 @@ class Startup(models.Model):
     sector = models.CharField(max_length=50)
     team_size = models.IntegerField(default=1)
     website = models.URLField(max_length=512,blank=True)
+    company_code = models.CharField(max_length=8, unique=True)
     # company_code = models.CharField(default = ''.join((choice(string.ascii_uppercase) for x in range(7))), unique=True,max_length=7) #this will be used as team-code
-    REQUIRED_FIELDS = ['gstin','company_name']
+    REQUIRED_FIELDS = ['gstin','company_name','company_code']
 
     # objects = StartupManager()
     def __str__(self):
@@ -71,8 +72,8 @@ class Member(models.Model):
     # dob = models.DateField()
     job_title = models.CharField(max_length=50)  # position in the company
     joining_date = models.CharField(max_length=50, default=timezone.now)
-    # joining_code = models.CharField(max_length=7)
-    REQUIRED_FIELDS = ['first_name','last_name','startup']
+    joining_code = models.CharField(max_length=8)
+    REQUIRED_FIELDS = ['first_name','last_name','joining_code']
 
     def __str__(self):
         return str(self.first_name + ' ' +self.last_name + ' | '+ self.job_title) if self.first_name or self.last_name or self.job_title else str(self.user.uid)
